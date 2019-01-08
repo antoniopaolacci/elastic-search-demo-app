@@ -222,3 +222,7 @@ Prerequisites:
  
  E:\logstash-6.5.3\logstash-6.5.3\bin\logstash.bat -f E:\logstash-6.5.3\logstash-6.5.3\config\elk-example-spring-boot.conf
  ```
+ 
+ Verify default logstash-* index 
+ 
+ ![image](https://github.com/antoniopaolacci/elastic-search-demo-app/blob/master/logstash.jpg)
