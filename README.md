@@ -1,7 +1,7 @@
 # elastic-search-demo-app
 An ELK-stack search demo app.
 
-I want to send logs from a Java app to ElasticSearch, and the conventional approach seems to be to set up logstash on the server running the app, and have logstash parse the log files and load them into ElasticSearch.
+I want to send logs from a java app to ElasticSearch stack, and the conventional approach seems to be to set up logstash on the server running the app, and have logstash parse the log files and load them into ElasticSearch.
 Instead I want to uselog4j-json-layout everywhere, so I can have log4j's regular file appenders produce JSON logs that don't require any further parsing by logstash.
 It seems crazy to have deal with grok filters to deal with multiline stack traces problem for example (and burn CPU cycles on log parsing).
 
@@ -75,7 +75,7 @@ Prerequisites:
  systemctl enable kibana
  ```
 
-# Install NGINX as reverse proxy #
+# Install NGINX as reverse proxy, to serve Kibana console content to the internet #
 
   Install the epel release repository, nginx and httpd-tools
   ```
@@ -163,19 +163,23 @@ Prerequisites:
 			<version>0.15</version>
 		</dependency>
 
-		...
+	...
+	<Appenders>
+	...
 		<File name="MyJson" fileName="log/json.log" immediateFlush="true">
 			<LogstashLayout dateTimeFormatPattern="yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
-				eventTemplateUri="classpath:LogstashJsonEventLayoutV1.json"
-				prettyPrintEnabled="true" stackTraceEnabled="true" />
+							templateUri="classpath:LogstashJsonEventLayoutV1.json"
+							prettyPrintEnabled="false" 
+							locationInfoEnabled="true" />
 		</File>
-		
-		<Loggers>
-		<Root level="info">
-			...
-			<AppenderRef ref="MyJson" />
-		</Root>
+	</Appenders>
+	<Loggers>
+		<Logger name="it.example" level="info">
+	      <AppenderRef ref="MyJson"/>
+		  ...
+	    </Logger>
 	</Loggers>
+	...
  ```
  
  We need to configure Logstash to read data from log files created by our app and send it to ElasticSearch and visualize on Kibana.
