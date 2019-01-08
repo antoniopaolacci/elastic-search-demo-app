@@ -1,0 +1,13 @@
+2019-01-08 14:56:53.434 [main] [INFO ] [it.example.test.app.AppTest] - This is executed before each Test
+2019-01-08 14:56:53.449 [main] [INFO ] [it.example.test.app.AppTest] - testIdGenerator() method called.
+2019-01-08 14:56:53.654 [main] [INFO ] [it.example.test.app.AppTest] - ID = [0063170097361016832613424381944052687309]
+2019-01-08 14:56:53.654 [main] [INFO ] [it.example.test.app.AppTest] - This is executed after each Test
+2019-01-08 14:58:09.992 [qtp1386023727-32] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 14:58:10.027 [qtp1386023727-32] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 14:58:13.733 [qtp1386023727-34] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 14:58:13.736 [qtp1386023727-34] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 14:58:15.617 [qtp1386023727-35] [INFO ] [it.example.app.App] - URL requested: /add 
+2019-01-08 14:58:18.143 [qtp1386023727-33] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 14:58:18.153 [qtp1386023727-33] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 14:59:50.023 [qtp1386023727-36] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 14:59:50.041 [qtp1386023727-36] [INFO ] [it.example.app.App] - Display homepage
