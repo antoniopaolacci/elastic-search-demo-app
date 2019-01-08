@@ -5,6 +5,8 @@ I want to send logs from a Java app to ElasticSearch, and the conventional appro
 Instead I want to uselog4j-json-layout everywhere, so I can have log4j's regular file appenders produce JSON logs that don't require any further parsing by logstash.
 It seems crazy to have deal with grok filters to deal with multiline stack traces problem for example (and burn CPU cycles on log parsing).
 
+![alt text](https://github.com/antoniopaolacci/elastic-search-demo-app/blob/master/elk-stack.png)
+
 # Install ELK Stack #
 
 Prerequisites:
