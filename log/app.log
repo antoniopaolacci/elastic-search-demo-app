@@ -11,3 +11,23 @@
 2019-01-08 14:58:18.153 [qtp1386023727-33] [INFO ] [it.example.app.App] - Display homepage
 2019-01-08 14:59:50.023 [qtp1386023727-36] [INFO ] [it.example.app.App] - URL requested: /search 
 2019-01-08 14:59:50.041 [qtp1386023727-36] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 17:00:32.439 [qtp514935268-33] [INFO ] [it.example.app.App] - URL requested: / 
+2019-01-08 17:00:32.496 [qtp514935268-33] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 17:00:34.270 [qtp514935268-35] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 17:00:34.354 [qtp514935268-35] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 17:01:41.489 [main] [INFO ] [it.example.test.app.AppTest] - This is executed before each Test
+2019-01-08 17:01:41.504 [main] [INFO ] [it.example.test.app.AppTest] - testIdGenerator() method called.
+2019-01-08 17:01:41.707 [main] [INFO ] [it.example.test.app.AppTest] - ID = [0064146105157292665316292819317418261804]
+2019-01-08 17:01:41.707 [main] [INFO ] [it.example.test.app.AppTest] - This is executed after each Test
+2019-01-08 17:01:55.071 [qtp514935268-36] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 17:01:55.087 [qtp514935268-36] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 17:01:58.179 [qtp514935268-32] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 17:01:58.182 [qtp514935268-32] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 17:02:01.629 [qtp514935268-30] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 17:02:01.637 [qtp514935268-30] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 17:02:04.975 [qtp514935268-36] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 17:02:04.983 [qtp514935268-36] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 17:02:07.192 [qtp514935268-35] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 17:02:07.208 [qtp514935268-35] [INFO ] [it.example.app.App] - Display homepage
+2019-01-08 17:02:09.038 [qtp514935268-29] [INFO ] [it.example.app.App] - URL requested: /search 
+2019-01-08 17:02:09.048 [qtp514935268-29] [INFO ] [it.example.app.App] - Display homepage
