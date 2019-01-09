@@ -157,51 +157,52 @@ Prerequisites:
  To make use of this encoder, we need to add the following dependency, compatible with log4j2, to our pom.xml:
  
  ```
-		 <dependency>
-			<groupId>com.vlkan.log4j2</groupId>
-			<artifactId>log4j2-logstash-layout</artifactId>
-			<version>0.15</version>
-		</dependency>
-
-	...
-	<Appenders>
-	...
-		<File name="MyJson" fileName="log/json.log" immediateFlush="true">
-			<LogstashLayout dateTimeFormatPattern="yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
-							templateUri="classpath:LogstashJsonEventLayoutV1.json"
-							prettyPrintEnabled="false" 
-							locationInfoEnabled="true" />
-		</File>
-	</Appenders>
-	<Loggers>
-		<Logger name="it.example" level="info">
-	      <AppenderRef ref="MyJson"/>
-		  ...
-	    </Logger>
-	</Loggers>
-	...
- ```
+ <dependency>
+	<groupId>com.vlkan.log4j2</groupId>
+	<artifactId>log4j2-logstash-layout</artifactId>
+	<version>0.15</version>
+</dependency>
+```
+add the following appender related to a package-specific logger in log4j2.xml file: 
+```...
+<Appenders>
+...
+	<File name="MyJson" fileName="log/json.log" immediateFlush="true">
+		<LogstashLayout dateTimeFormatPattern="yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
+						templateUri="classpath:LogstashJsonEventLayoutV1.json"
+						prettyPrintEnabled="false" 
+						locationInfoEnabled="true" />
+	</File>
+</Appenders>
+<Loggers>
+	<Logger name="it.example" level="info">
+      <AppenderRef ref="MyJson"/>
+	  ...
+    </Logger>
+</Loggers>
+...
+```
  
  We need to configure Logstash to read data from log files created by our app and send it to ElasticSearch and visualize on Kibana.
- ```
-	input {
-	  file {
-		path => "E:/git-repo/elastic-search-demo-app/log/json.log"
-	  }
-	}
+```
+input {
+  file {
+	path => "E:/git-repo/elastic-search-demo-app/log/json.log"
+  }
+}
 
-	output {
-	   
-	  stdout {
-		codec => rubydebug
-	  }
-	 
-	  # Sending properly parsed log events to elasticsearch
-	  elasticsearch {
-		hosts => ["localhost:9200"]
-	  }
-	}
-  ```
+output {
+
+  stdout {
+	codec => rubydebug
+  }
+
+  # Sending properly parsed log events to elasticsearch
+  elasticsearch {
+	hosts => ["localhost:9200"]
+  }
+}
+```
  
  Input file is used as Logstash will read logs this time from logging files.
  Path is set to our logging directory and all files with .log extension will be processed.
