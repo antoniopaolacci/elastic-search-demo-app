@@ -167,12 +167,12 @@ add the following appender related to a package-specific logger in log4j2.xml fi
 ```...
 <Appenders>
 ...
-	<File name="MyJson" fileName="log/json.log" immediateFlush="true">
-		<LogstashLayout dateTimeFormatPattern="yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
-						templateUri="classpath:LogstashJsonEventLayoutV1.json"
-						prettyPrintEnabled="false" 
-						locationInfoEnabled="true" />
-	</File>
+  <File name="MyJson" fileName="log/json.log" immediateFlush="true">
+	<LogstashLayout dateTimeFormatPattern="yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
+			templateUri="classpath:LogstashJsonEventLayoutV1.json"
+			prettyPrintEnabled="false" 
+			locationInfoEnabled="true" />
+  </File>
 </Appenders>
 <Loggers>
 	<Logger name="it.example" level="info">
@@ -224,6 +224,6 @@ output {
  E:\logstash-6.5.3\logstash-6.5.3\bin\logstash.bat -f E:\logstash-6.5.3\logstash-6.5.3\config\elk-example-spring-boot.conf
  ```
  
- Verify default logstash-* index 
+ Verify default logstash-<b>*</b> index 
  
  ![image](https://github.com/antoniopaolacci/elastic-search-demo-app/blob/master/logstash.jpg)
